@@ -27,7 +27,7 @@ function asyncHandler(cb) {
 // GET /api/users 200 - 
 // Returns the currently authenticated user
 router.get('/', authenticateUser, asyncHandler(async (req, res) => {
-    let user = await User.findAll({
+    let user = await User.findOne({
         attributes: [
             "id",
             "firstName",
@@ -38,20 +38,7 @@ router.get('/', authenticateUser, asyncHandler(async (req, res) => {
             id: req.currentUser.id
         }
     });
-    const courses = await Course.findAll({
-        attributes: [
-            "id",
-            "title",
-            "description",
-            "estimatedTime",
-            "materialsNeeded"
-        ],
-        where: {
-            userId: req.currentUser.id
-        }
-    });
 
-    user = {user, courses};
     res.status(200).json(user);
 }));
 
@@ -68,7 +55,7 @@ router.post('/', [
         .exists({ checkNull: true, checkFalsy: true })
         .withMessage('Please provide a value for "emailAddress"')
         .isEmail()
-        .withMessage('Please provide a valie email address for "emailAddress"')
+        .withMessage('Please provide a valid email address for "emailAddress"')
         .custom(async (email, { req }) => {
             const users = await User.findAll({attributes: ["emailAddress"]});
             const emails = users.map(user => user.dataValues.emailAddress);

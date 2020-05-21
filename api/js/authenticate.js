@@ -15,7 +15,8 @@ const authenticateUser = async (req, res, next) => {
 
     // Parse credentials from Auth header
     const credentials = auth(req);
-
+    console.log("HELLO");
+    console.log(credentials);
     if (credentials) {
         // if credentials are available
         // attempt to retrieve user from database
@@ -39,7 +40,7 @@ const authenticateUser = async (req, res, next) => {
                 message = `Authentication failure for username: ${user.username}`;
             }
         } else {
-            message = `User not found for username: ${credentials.mame}`;
+            message = `User not found for username: ${credentials.name}`;
         }
     } else {
         message = `Auth header not found`;

@@ -5,12 +5,42 @@ import {
   Switch
 } from 'react-router-dom';
 
-import Test from './components/Test';
+// Import Components
+import Header from './components/Header';
+import Courses from './components/Courses';
+import CourseDetail from './components/CourseDetail';
+import CreateCourse from './components/CreateCourse';
+import UpdateCourse from './components/UpdateCourse';
+import UserSignIn from './components/UserSignIn';
+import UserSignUp from './components/UserSignUp';
+import UserSignOut from './components/UserSignOut';
+import Error from './components/Error';
+import NotFound from './components/NotFound';
+import Forbidden from './components/Forbidden';
+
+import withContext from './Context';
+import PrivateRoute from './PrivateRoute';
+
+const HeaderWithContext = withContext(Header);
 
 export default () => (
   <Router>
     <div>
-      <Route path="/test" component={Test} />
+      <HeaderWithContext />
+      <Switch>
+        <Route exact path="/" component={withContext(Courses)} />
+        <Route path = '/signin' component={withContext(UserSignIn)} />
+        <Route path = '/signup' component={withContext(UserSignUp)} />
+        <Route path = '/signout' component={withContext(UserSignOut)} />
+        <PrivateRoute path="/courses/create" component={withContext(CreateCourse)} />
+        <PrivateRoute path="/courses/:id/update" component={withContext(UpdateCourse)} />
+        <Route exact path="/courses/:id" component={withContext(CourseDetail)} />
+        
+        <Route path="/error" component={Error} />
+        <Route path="/forbidden" component={Forbidden} />
+        <Route path="/notfound" component={NotFound} />
+        <Route component={NotFound} />
+      </Switch>
     </div>
   </Router>
 );

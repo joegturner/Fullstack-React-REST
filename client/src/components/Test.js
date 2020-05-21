@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 class Test extends Component {
 
     state = {
-        courses: []
+        courses: null,
+        test: ['one', 'two', 'three', 'four']
     }
 
     api(path, method = 'GET') {
@@ -19,36 +19,51 @@ class Test extends Component {
         return fetch(url, options);
     }
       
-    async getData() {
+    async getData () {
         const response = await this.api('http://localhost:5000/api/courses', 'GET');
         console.log(response.status);
-        if (response.status === 200) {
-            let test =[];
-            response.json().then(data => test.push(data));
-            // this.setState({
-            //     courses: test
-            // });
-            console.log(test);
-            return test;
-        }
-        else if (response.status === 401) {
+
+        if(response.status === 200) {
+            return response.json()
+                .then(data => 
+                    this.setState({courses: data})
+                );
+        } else {
             return null;
         }
-        else {
-            throw new Error();
-        }
+
     }
 
+    componentDidMount() {
+        this.getData();
+    }
+
+    renderCourses = () => {
+        let courses = [];
+
+        if (this.state.courses !== null) {
+            for (let i = 0; i < this.state.courses.length; i++) {
+                courses.push(
+                    <li key={i}>
+                        {this.state.courses[i].title}
+                    </li>
+                )
+            }  
+        }
+
+        return courses;
+    }
 
     render() {
-        const data = this.getData();
-        console.log(data);
-        
         return (
-        <div className="header">
+        <div className="bounds">
             <span>Welcome!</span>
             <ul>
-                <li>poop</li>
+                {this.state.courses !== null ? 
+                    this.renderCourses()
+                    :
+                    <h1>No data found</h1>
+                }
             </ul>
         </div>
         );
