@@ -14,14 +14,16 @@
 - download or clone the repo
 - in the terminal: navigate to project/api
     - execute the command: npm install
+    - execute the command: npm run seed
     - execute the command: npm start
 - open a second terminal window: navigate to project/client
     - execute the command: npm install
     - execute the command: npm start
 
 ## Going for "Exceeds Expectations"
-- Included a Search field
-- Included Pagination for the books listing
+- Included NotFound, Forbidden, UnhandledError routes
+- Included credentials persistence
+- Included redirecting after user has logged in
 
 ## Skills, Techniques, Process
 - Primary languages, frameworks, and libraries: JavaScript, Node.js, Express, SQL ORM Sequelize, REST API, React
