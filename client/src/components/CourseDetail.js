@@ -119,7 +119,6 @@ class CourseDetail extends Component {
     renderCourse() {
         let jsx = [];
         const { course } = this.state;
-        console.log(course);
         
         if (course !== null) {
             jsx.push(

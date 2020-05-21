@@ -34,12 +34,10 @@ export class Provider extends Component {
         const user = await this.fetchAPI.getUser(emailAddress, password);
 
         if (user !== null) {
-            console.log(user);
             user.password = password;
             this.setState(() => {
                 return {authenticatedUser: user};
             });
-            console.log(this.state.authenticatedUser);
             Cookies.set('authenticatedUser', JSON.stringify(user), { expires: 1 });
         } 
         return user;

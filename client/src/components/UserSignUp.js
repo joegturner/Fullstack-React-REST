@@ -107,7 +107,6 @@ class UserSignIn extends Component {
 
         context.fetchAPI.createUser(user)
             .then( errors => {
-                console.log(errors);
                 if (errors.length) {
                     this.setState({ errors });
                 } else {
