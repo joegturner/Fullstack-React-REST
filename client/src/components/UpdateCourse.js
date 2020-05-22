@@ -15,7 +15,8 @@ class UpdateCourse extends Component {
     }
 
     componentDidMount() {
-        this.getCourse();      
+        this.getCourse(); 
+
     }
 
     getCourse = async () => {
@@ -36,6 +37,19 @@ class UpdateCourse extends Component {
         }
     }
 
+    checkUser = () => {
+        let courseUserId;
+        const authUserId = this.props.context.authenticatedUser.id;
+
+        if (this.state.user !== null) {
+            courseUserId = this.state.user.id;
+        }
+        if (courseUserId > 0) {
+            if (courseUserId !== authUserId) {
+                this.props.history.push('/forbidden');
+            }
+        }
+    }
 
     render() { 
         const {
@@ -44,6 +58,8 @@ class UpdateCourse extends Component {
 
         const { status } = this.state;
 
+        this.checkUser();
+        
         return (
             <div className="bounds course--detail">
                 <h1>Update Course</h1>

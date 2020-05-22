@@ -114,7 +114,6 @@ export default class FetchAPI {
     }
 
     async updateCourse(id, updates, username, password) {
-        console.log(username);
         const response = await this.api(`/courses/${id}`, 'PUT', updates, true, {username, password});
 
         console.log(response.status);

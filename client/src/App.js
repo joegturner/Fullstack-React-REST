@@ -23,6 +23,11 @@ import PrivateRoute from './PrivateRoute';
 
 const HeaderWithContext = withContext(Header);
 
+document.addEventListener("click", (event) => {
+  console.log(event.target);
+});
+
+
 export default () => (
   <Router>
     <div>

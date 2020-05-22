@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
+import { NavLink } from 'react-router-dom';
 
 class CourseDetail extends Component {
     state = {
@@ -57,64 +58,6 @@ class CourseDetail extends Component {
             this.props.history.push('/error');
         }
     }
-
-    // renderCourse() {
-    //     let jsx = [];
-    //     const { course } = this.state;
-        
-    //     if (course !== null) {
-    //         jsx.push(
-    //             <div key={1} className="grid-66">
-    //                 <div className="course--header">
-    //                     <h4 className="course--label">Course</h4>
-    //                     <h3 className="course--title">{course.title}</h3>
-    //                     <p>{`By ${course.user.firstName} ${course.user.lastName}`}</p>
-    //                 </div>
-    //                 <div className="course--description">
-    //                     {course.description.split("\n").map((text, index) => 
-    //                         <p key={index}>{text}</p>
-    //                     )}
-    //                 </div>
-    //                 <div className="grid-25 grid-right"></div>
-    //                     <div className="course--stats">
-    //                         <ul className="course--stats--list">
-    //                             <li className="course--stats--list--item">
-    //                             {course.estimatedTime ?
-    //                                 <div>
-    //                                     <h4>Estimated Time</h4>
-    //                                     <h3>{course.estimatedTime}</h3>
-    //                                 </div>
-    //                                 :
-    //                                 null
-    //                             }
-    //                             </li>
-    //                             <li className="course--stats--list--item">
-    //                             {course.materialsNeeded ?
-    //                                 <div>
-    //                                     <h4>Materials Needed</h4>
-    //                                     <ul>
-    //                                         {course.materialsNeeded.split("*").map((material, index) => 
-    //                                             material === "" ?
-    //                                             null
-    //                                             :
-    //                                             <li key={index}>{material}</li>
-    //                                         )}
-    //                                     </ul>
-    //                                 </div>
-    //                                 :
-    //                                 null
-    //                             }
-    //                             </li>
-    //                         </ul>
-    //                     </div>
-    //                 </div>
-    //         );
-    //     } else  {
-    //         jsx.push(<h1 key={1}>Loading...</h1>);
-    //     }
-
-    //     return jsx;
-    // }
 
     renderCourse() {
         let jsx = [];
@@ -186,10 +129,10 @@ class CourseDetail extends Component {
                         <div className="grid-100"> 
                             {authenticated ?
                                 <span>
-                                    <a 
+                                    <NavLink 
                                         className="button" 
-                                        href={`${course.id}/update`}>
-                                        Update Course</a>
+                                        to={`${course.id}/update`}>
+                                        Update Course</NavLink>
                                     <button 
                                         className="button" 
                                         onClick={() => this.showDeleteConfirm()}>
@@ -198,17 +141,16 @@ class CourseDetail extends Component {
                                 :
                                 null
                             }
-                            <a className="button button-secondary" href="/">Return to List</a>
+                            <NavLink className="button button-secondary" to="/">Return to List</NavLink>
                         </div>
                     </div>
                     {showDeleteConfirmation ?
                         <div className="bounds">
-                            <div className="grid-100" style={{margin: '20px'}}>
-                                <h4>Please confirm deletion:</h4>
+                            <div className="grid-100" style={{margin: '10px'}}>
                                 <button 
                                     className="button"
                                     onClick={() => this.handleDelete()}>
-                                    Yes, delete!</button>
+                                    Confirm delete</button>
                                 <button 
                                     className="button button-secondary" 
                                     onClick={() => this.hideDeleteConfirm()}>

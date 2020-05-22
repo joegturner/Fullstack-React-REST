@@ -1,3 +1,23 @@
+:root {
+  --header_color: #1A3825;
+  --button_course_color: #316845;
+  --buttons: #316845;
+  --buttons_hover: #343E49;
+  --button_secondary: #1A3825;
+  --button_secondary_hover: #316845;
+  --body: #ADD8BE;
+  --action_bar_bk: #5F9172;
+  --action_bar_bottom: rgb(0, 0, 0);
+
+  --text_title: rgb(240, 238, 238);
+
+  --text_course_header: #3B0F82;
+  --text_course_stats: #3B0F82;
+
+}
+
+@import url(https://fonts.googleapis.com/css2?family=Cinzel&family=Montserrat&display=swap);
+
 /* line 7, ../sass/reset.sass */
 a,
 abbr,
@@ -201,13 +221,14 @@ svg {
 
 /* line 5, ../sass/global.sass */
 body {
-  font-family: "Work Sans", sans-serif;
-  background: #fff;
+  font-family: 'Montserrat', sans-serif;
+  background: var(--body);
 }
 
 /* line 13, ../sass/global.sass */
+/* original: background: #57496e;  */
 .header {
-  background: #57496e;
+  background: var(--header_color);
   padding: 20px 0;
   margin-bottom: 30px;
 }
@@ -255,8 +276,8 @@ body {
 
 /* line 44, ../sass/global.sass */
 .actions--bar {
-  border-bottom: 1px solid #d5f9fe;
-  background: #f8feff;
+  border-bottom: 1px solid var(--action_bar_bottom);
+  background: var(--action_bar_bk);
   padding: 20px 0;
   margin-top: -30px;
 }
@@ -294,7 +315,7 @@ a {
 
 /* line 66, ../sass/global.sass */
 p {
-  font-family: "Cousine";
+  font-family: 'Montserrat', sans-serif;
   margin-bottom: 30px;
 }
 
@@ -339,7 +360,7 @@ p {
 
 /* line 102, ../sass/global.sass */
 .course--module {
-  background: #7c689b;
+  background: var(--button_course_color);
   border-radius: 8px;
   padding: 30px;
   margin-bottom: 30px;
@@ -365,10 +386,10 @@ p {
 }
 /* line 116, ../sass/global.sass */
 .course--label {
-  font-family: "Cousine";
+  font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   font-weight: 100;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text_title);
   margin-bottom: 10px;
   font-weight: normal;
 }
@@ -376,6 +397,7 @@ p {
 .course--title {
   font-size: 18px;
   color: #fff;
+  font-family: 'Cinzel', serif;
 }
 /* line 126, ../sass/global.sass */
 .course--link {
@@ -428,7 +450,7 @@ p {
 /* line 164, ../sass/global.sass */
 .course--header .course--label {
   font-size: 18px;
-  color: #999;
+  color: var(--text_course_header);
 }
 /* line 167, ../sass/global.sass */
 .course--header .course--title {
@@ -439,14 +461,14 @@ p {
 /* line 171, ../sass/global.sass */
 .course--header p {
   font-size: 18px;
-  color: #b1a5c4;
+  color: #332a40;
   font-weight: 100;
 }
 /* line 176, ../sass/global.sass */
 .course--title--input {
   font-size: 48px;
   font-weight: bold;
-  font-family: "Work Sans", sans-serif;
+  font-family: 'Cinzel', serif;
 }
 /* line 186, ../sass/global.sass */
 .course--description {
@@ -475,7 +497,7 @@ p {
   border-top: 1px solid #ccc;
   font-size: 16px;
   line-height: 1.8;
-  font-family: "Cousine";
+  font-family: 'Montserrat', sans-serif;
 }
 /* line 2, ../sass/mixins.sass */
 .course--description li:before, .course--description li:after {
@@ -514,7 +536,7 @@ p {
 .course--description h1,
 .course--description h2,
 .course--description h3 {
-  font-family: "Work Sans", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #222;
   margin-bottom: 30px;
 }
@@ -540,9 +562,9 @@ p {
 }
 /* line 287, ../sass/global.sass */
 .course--stats--list h4 {
-  font-family: "Cousine";
+  font-family: 'Montserrat', sans-serif;
   font-weight: 100;
-  color: #999;
+  color: var(--text_course_stats);
   font-size: 14px;
   padding: 0 0 10px;
   margin-bottom: 10px;
@@ -555,7 +577,7 @@ p {
 }
 /* line 300, ../sass/global.sass */
 .course--stats--list h3 {
-  font-family: "Work Sans", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 18px;
 }
 /* line 303, ../sass/global.sass */
@@ -573,7 +595,7 @@ p {
 }
 /* line 311, ../sass/global.sass */
 .course--time--input {
-  font-family: "Work Sans", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   font-weight: bold;
   margin: 0;
@@ -598,7 +620,7 @@ textarea {
   color: #666;
   line-height: 1.8;
   outline: none;
-  font-family: "Cousine";
+  font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
 }
 /* line 29, ../sass/mixins.sass */
@@ -678,10 +700,10 @@ input:focus {
 
 /* line 507, ../sass/global.sass */
 .button {
-  background: #7c689b;
+  background: var(--buttons);
   color: #fff;
   cursor: pointer;
-  font-family: "Work Sans", sans-serif;
+  font-family: 'Cinzel', serif;
   font-size: 18px;
   padding: 15px 30px;
   border: 0;
@@ -702,14 +724,14 @@ input:focus {
 }
 /* line 522, ../sass/global.sass */
 .button:not(.button-secondary):hover {
-  background: #63537d;
+  background: var(--buttons_hover);
 }
 
 /* line 525, ../sass/global.sass */
 .button-secondary {
-  color: #7c689b;
+  color: var(--button_secondary);
   background: none;
-  box-shadow: 0 0 0 2px #7c689b inset;
+  box-shadow: 0 0 0 2px inset;
   -webkit-transition: box-shadow 0.2s, color 0.2s;
   -moz-transition: box-shadow 0.2s, color 0.2s;
   -ms-transition: box-shadow 0.2s, color 0.2s;
@@ -718,6 +740,6 @@ input:focus {
 }
 /* line 530, ../sass/global.sass */
 .button-secondary:hover {
-  color: #42315e;
+  color: var(--button_secondary_hover);
   box-shadow: 0 0 0 2px #63537d inset;
 }

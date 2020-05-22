@@ -63,7 +63,7 @@ class UserSignIn extends Component {
                                     <input 
                                         id="confirmPassword" 
                                         name="confirmPassword" 
-                                        type="confirmPassword" 
+                                        type="password" 
                                         value={confirmPassword} 
                                         onChange={this.change}
                                         placeholder="Confirm Password" />
@@ -95,7 +95,8 @@ class UserSignIn extends Component {
             firstName,
             lastName,
             emailAddress,
-            password
+            password,
+            confirmPassword
         } = this.state;
 
         const user = {
@@ -104,15 +105,22 @@ class UserSignIn extends Component {
             emailAddress,
             password
         }
-
-        context.fetchAPI.createUser(user)
+    
+        if(password !== confirmPassword) {
+            let errors = [];
+            errors = errors.concat("Password confirmation was incorrect. Please try again.");
+            console.log(errors);
+            
+            this.setState({ errors });
+        } else {
+            context.fetchAPI.createUser(user)
             .then( errors => {
                 if (errors.length) {
                     this.setState({ errors });
                 } else {
                     context.actions.signIn(emailAddress, password)
                         .then(() => {
-                        this.props.history.push('/authenticated');
+                        this.props.history.push('/');
                         });
                 console.log(`${emailAddress} is successfully signed up and authenticated!`);
                 }
@@ -121,6 +129,8 @@ class UserSignIn extends Component {
                 console.log(err);
                 this.props.history.push('/error');
             });
+        }
+ 
     }
 
     cancel = () => {

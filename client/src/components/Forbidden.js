@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 export default () => {
     return (
@@ -8,7 +9,7 @@ export default () => {
             <p>Oh oh! You can't access this page.</p>
         </div>
         <div className="bounds grid=100">
-            <a className="button button-secondary" href="/">Return to List</a>
+            <NavLink className="button button-secondary" to="/">Return to List</NavLink>
         </div>
         </React.Fragment>
 

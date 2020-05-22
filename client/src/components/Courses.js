@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 
 class Courses extends Component {
     state = {
@@ -36,10 +37,10 @@ class Courses extends Component {
             for (let i = 0; i < courses.length; i++) {
                 jsx.push(
                     <div key={courses[i].id} className="grid-33">
-                        <a className="course--module course--link" href={`/courses/${courses[i].id}`}>
+                        <NavLink  className="course--module course--link" to={`/courses/${courses[i].id}`} >
                         <h4 className="course--label">Course</h4>
                         <h3 className="course--title">{courses[i].title}</h3>
-                        </a>
+                        </NavLink>
                     </div>
                 )
             }  
@@ -55,13 +56,13 @@ class Courses extends Component {
             <div className="bounds">
                 {this.renderCourses()}
                 <div className="grid-33">
-                    <a className="course--module course--add--module" href="/courses/create">
+                    <NavLink className="course--module course--add--module" to="/courses/create">
                         <h3 className="course--add--title">
                             <svg viewBox="0 0 13 13" className="add">
                                 <polygon points="7,6 7,0 6,0 6,6 0,6 0,7 6,7 6,13 7,13 7,7 13,7 13,6 "></polygon>
                             </svg>New Course
                         </h3>
-                    </a>
+                    </NavLink>
                 </div>
             </div>
         );
