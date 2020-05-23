@@ -4,7 +4,9 @@
 const cors = require('cors');
 const express = require('express');
 const morgan = require('morgan');
+const helmet = require('helmet');
 const db = require('./models');
+const path = require('path');
 const coursesRoutes = require('./routes/courses');
 const usersRoutes = require('./routes/users');
 
@@ -14,11 +16,17 @@ const enableGlobalErrorLogging = process.env.ENABLE_GLOBAL_ERROR_LOGGING === 'tr
 // create the Express app
 const app = express();
 
+// serve files from client build folder
+app.use(express.static(path.join(__dirname, '../client/build')));
+
 // Enable all CORS requests
 app.use(cors());
 
 // setup morgan which gives us http request logging
 app.use(morgan('dev'));
+
+// set appropriate headers to protect common vulnerablities
+app.use(helmet());
 
 // Setup request body JSON parsing
 app.use(express.json());
@@ -32,6 +40,10 @@ app.get('/', (req, res) => {
   res.json({
     message: 'Welcome to the REST API project!',
   });
+});
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
 // send 404 if no other route matched

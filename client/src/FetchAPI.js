@@ -1,5 +1,5 @@
 export default class FetchAPI {
-    static url = 'http://localhost:5000/api';
+    static url = '/api';
     
     // Fetch API method
     api(path, method = 'GET', body = null, requiresAuth = false, credentials = null) {

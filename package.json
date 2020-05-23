@@ -1,0 +1,25 @@
+{
+  "name": "full-stack-courses",
+  "version": "1.0.0",
+  "engines": {
+    "node": "13.8.0"
+  },
+  "description": "Fictional Courses Manager - Front end: React - Back end: REST API, Express framework, Sequelize ORM - Going for \"Exceeds Expectations\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd api && npm install && npm start",
+    "heroku-postbuild": "cd client && npm install && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joegturner/Fullstack-React-REST.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joegturner/Fullstack-React-REST/issues"
+  },
+  "homepage": "https://github.com/joegturner/Fullstack-React-REST#readme"
+}
