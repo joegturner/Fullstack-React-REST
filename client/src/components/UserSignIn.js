@@ -62,6 +62,7 @@ class UserSignIn extends Component {
         });
     }
 
+    // Store authenticated user to Context Provider's state
     submit = () => {
         const { context } = this.props;
         const { from } = this.props.location.state || { from: {pathname: '/' }};

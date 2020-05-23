@@ -1,6 +1,7 @@
 export default class FetchAPI {
     static url = 'http://localhost:5000/api';
     
+    // Fetch API method
     api(path, method = 'GET', body = null, requiresAuth = false, credentials = null) {
         const baseURL = 'http://localhost:5000/api';
         const url = baseURL + path;
@@ -24,6 +25,7 @@ export default class FetchAPI {
         return fetch(url, options);
     }
 
+    // Get single user - GET from /users
     async getUser(username, password) {
         const response = await this.api(`/users`, 'GET', null, true, {username, password});
         console.log(response.status);
@@ -37,6 +39,7 @@ export default class FetchAPI {
         }
     }
 
+    // Create user - POST to /users
     async createUser(user) {
         const response = await this.api(`/users`, 'POST', user);
         console.log(response.status);
@@ -52,6 +55,7 @@ export default class FetchAPI {
         }
     }
 
+    // Get all courses - GET from /courses
     async getCourses() {
         const response = await this.api('/courses', 'GET');
         console.log(response.status);
@@ -71,6 +75,7 @@ export default class FetchAPI {
 
     }
 
+    // Get single course - GET from /courses/id
     async getCourse(id) {
         const response = await this.api(`/courses/${id}`, 'GET');
         console.log(response.status);
@@ -89,6 +94,7 @@ export default class FetchAPI {
         }
     }
 
+    // Create course - POST to /courses
     async createCourse(course, username, password) {
         const response = await this.api('/courses', 'POST', course, true, {username, password});
         console.log(response.status);
@@ -113,6 +119,7 @@ export default class FetchAPI {
         }
     }
 
+    // Updated course - PUT to /courses/id
     async updateCourse(id, updates, username, password) {
         const response = await this.api(`/courses/${id}`, 'PUT', updates, true, {username, password});
 
@@ -138,6 +145,7 @@ export default class FetchAPI {
         }
     }
 
+    // Delete course - DELETE to /courses/id
     async deleteCourse(id, username, password) {
         const response = await this.api(`/courses/${id}`, 'DELETE', null, true, {username, password});
         console.log(response.status);

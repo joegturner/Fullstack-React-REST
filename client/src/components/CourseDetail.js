@@ -26,6 +26,7 @@ class CourseDetail extends Component {
         this.getCourse();      
     }
 
+    // Store course data to state from Fetch API
     getCourse = async () => {
         const { fetchAPI } = this.props.context;
         const id = this.props.match.params.id;
@@ -41,6 +42,7 @@ class CourseDetail extends Component {
         }
     }
 
+    // Delete Course
     handleDelete = async () => {
         const { fetchAPI, authenticatedUser } = this.props.context;
         const id = this.props.match.params.id;
@@ -59,6 +61,7 @@ class CourseDetail extends Component {
         }
     }
 
+    /** Render helper methods **/
     renderCourse() {
         let jsx = [];
         const { course } = this.state;
@@ -107,7 +110,6 @@ class CourseDetail extends Component {
 
         return jsx;
     }
-
 
     renderButtons() {
         const { course } = this.state;

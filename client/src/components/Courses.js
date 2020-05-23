@@ -7,10 +7,29 @@ class Courses extends Component {
         message: ""
     }
 
+
+    render() {
+        return (
+            <div className="bounds">
+                {this.renderCourses()}
+                <div className="grid-33">
+                    <NavLink className="course--module course--add--module" to="/courses/create">
+                        <h3 className="course--add--title">
+                            <svg viewBox="0 0 13 13" className="add">
+                                <polygon points="7,6 7,0 6,0 6,6 0,6 0,7 6,7 6,13 7,13 7,7 13,7 13,6 "></polygon>
+                            </svg>New Course
+                        </h3>
+                    </NavLink>
+                </div>
+            </div>
+        );
+    }
+
     componentDidMount() {
         this.getCourses();      
     }
 
+    // Store course data to state from Fetch API
     getCourses = async () => {
         const { fetchAPI } = this.props.context;
         const data = await fetchAPI.getCourses();
@@ -24,6 +43,7 @@ class Courses extends Component {
         }
     }
 
+    /** Render helper methods **/
     renderCourses = () => {
         let jsx = [];
         const { courses, message } = this.state;
@@ -51,22 +71,6 @@ class Courses extends Component {
         return jsx;
     }
 
-    render() {
-        return (
-            <div className="bounds">
-                {this.renderCourses()}
-                <div className="grid-33">
-                    <NavLink className="course--module course--add--module" to="/courses/create">
-                        <h3 className="course--add--title">
-                            <svg viewBox="0 0 13 13" className="add">
-                                <polygon points="7,6 7,0 6,0 6,6 0,6 0,7 6,7 6,13 7,13 7,7 13,7 13,6 "></polygon>
-                            </svg>New Course
-                        </h3>
-                    </NavLink>
-                </div>
-            </div>
-        );
-    }
 
 }
 

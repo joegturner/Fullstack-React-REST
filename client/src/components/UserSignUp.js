@@ -89,6 +89,7 @@ class UserSignIn extends Component {
         });
     }
 
+    // Create new user via Context Provider's method
     submit = () => {
         const { context } = this.props;
         const {

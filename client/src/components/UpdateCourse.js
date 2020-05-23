@@ -14,43 +14,6 @@ class UpdateCourse extends Component {
         errors: [],
     }
 
-    componentDidMount() {
-        this.getCourse(); 
-
-    }
-
-    getCourse = async () => {
-        const { fetchAPI } = this.props.context;
-        const id = this.props.match.params.id;
-    
-        const data = await fetchAPI.getCourse(id);
-
-        if (data.status === 200) {
-            this.setState(
-                {...data.data,
-                    status: data.status
-                });
-        } else if (data.status === 404) {
-            this.props.history.push('/notfound');
-        } else {
-            this.props.history.push('/error');
-        }
-    }
-
-    checkUser = () => {
-        let courseUserId;
-        const authUserId = this.props.context.authenticatedUser.id;
-
-        if (this.state.user !== null) {
-            courseUserId = this.state.user.id;
-        }
-        if (courseUserId > 0) {
-            if (courseUserId !== authUserId) {
-                this.props.history.push('/forbidden');
-            }
-        }
-    }
-
     render() { 
         const {
             errors
@@ -94,6 +57,45 @@ class UpdateCourse extends Component {
                 
             </div>
         );
+    }
+
+    componentDidMount() {
+        this.getCourse(); 
+
+    }
+
+    // Save course data to state from Fetch API
+    getCourse = async () => {
+        const { fetchAPI } = this.props.context;
+        const id = this.props.match.params.id;
+    
+        const data = await fetchAPI.getCourse(id);
+
+        if (data.status === 200) {
+            this.setState(
+                {...data.data,
+                    status: data.status
+                });
+        } else if (data.status === 404) {
+            this.props.history.push('/notfound');
+        } else {
+            this.props.history.push('/error');
+        }
+    }
+
+    // verify authenticated user owns the course
+    checkUser = () => {
+        let courseUserId;
+        const authUserId = this.props.context.authenticatedUser.id;
+
+        if (this.state.user !== null) {
+            courseUserId = this.state.user.id;
+        }
+        if (courseUserId > 0) {
+            if (courseUserId !== authUserId) {
+                this.props.history.push('/forbidden');
+            }
+        }
     }
 
     change = (event) => {
@@ -147,6 +149,8 @@ class UpdateCourse extends Component {
     cancel = () => {
         this.props.history.push('/');
     }
+
+    /** Render helper methods **/
 
     renderFormTitle() {
         const { title } = this.state;

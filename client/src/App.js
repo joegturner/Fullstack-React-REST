@@ -17,16 +17,11 @@ import UserSignOut from './components/UserSignOut';
 import Error from './components/Error';
 import NotFound from './components/NotFound';
 import Forbidden from './components/Forbidden';
-
-import withContext from './Context';
 import PrivateRoute from './PrivateRoute';
 
+// Consumer wrapper
+import withContext from './Context';
 const HeaderWithContext = withContext(Header);
-
-document.addEventListener("click", (event) => {
-  console.log(event.target);
-});
-
 
 export default () => (
   <Router>
@@ -40,7 +35,6 @@ export default () => (
         <PrivateRoute path="/courses/create" component={withContext(CreateCourse)} />
         <PrivateRoute path="/courses/:id/update" component={withContext(UpdateCourse)} />
         <Route exact path="/courses/:id" component={withContext(CourseDetail)} />
-        
         <Route path="/error" component={Error} />
         <Route path="/forbidden" component={Forbidden} />
         <Route path="/notfound" component={NotFound} />

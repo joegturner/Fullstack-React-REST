@@ -30,6 +30,7 @@ export class Provider extends Component {
         );
     }
 
+    // Persist Authorized Username and Password
     signIn = async (emailAddress, password) => {
         const user = await this.fetchAPI.getUser(emailAddress, password);
 
@@ -43,6 +44,7 @@ export class Provider extends Component {
         return user;
     }
 
+    // Remove authenticated user from state and Cookies
     signOut = () => {
         this.setState(() => {
             return {
@@ -61,7 +63,6 @@ export const Consumer = Context.Consumer;
  * @param {class} Component - React component
  * @returns {function} - Context wrapper component
  */
-
 export default function withContext(Component) {
     return function ContextComponent(props) {
         return (

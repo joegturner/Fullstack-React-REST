@@ -34,6 +34,7 @@ export default (props) => {
         </div>
     )
 
+    // Render any validation errors from API
     function ErrorsDisplay({ errors }) {
         let errorsDisplay = null;
 
