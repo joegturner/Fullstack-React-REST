@@ -3,7 +3,7 @@ export default class FetchAPI {
     
     // Fetch API method
     api(path, method = 'GET', body = null, requiresAuth = false, credentials = null) {
-        const baseURL = 'http://localhost:5000/api';
+        const baseURL = '/api';
         const url = baseURL + path;
 
         const options = {
