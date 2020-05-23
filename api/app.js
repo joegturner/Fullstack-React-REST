@@ -82,7 +82,6 @@ const server = app.listen(app.get('port'), () => {
   console.log(`Express server is listening on port ${server.address().port}`);
 });
 
-
 db.sequelize
   .authenticate()
   .then(function(err) {
