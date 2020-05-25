@@ -33,13 +33,16 @@ class Courses extends Component {
     getCourses = async () => {
         const { fetchAPI } = this.props.context;
         const data = await fetchAPI.getCourses();
-
+        
         if (data.status === 200) {
             this.setState({courses: data.data});
+            if (!data.data.length) {
+                this.setState({message: 'Courses were not found'});
+            }
         } else if (data.status === 404) {
             this.setState({message: data.data.message});
         } else {
-            this.setState({message: 'Courses were not found'});
+            this.props.history.push('/error');
         }
     }
 

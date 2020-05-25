@@ -60,7 +60,7 @@ export default class FetchAPI {
         const response = await this.api('/courses', 'GET');
         console.log(response.status);
 
-        if(response.status === 200 || 404) {
+        if(response.status === 200 || response.status === 404) {
             return response.json().then(data => {
                 const results = {
                     status: response.status,
@@ -68,7 +68,9 @@ export default class FetchAPI {
                 };
                 return results;
             });
-        } 
+        } else if (response.status) {
+            return {status: response.status};
+        }
         else {
             throw new Error();
         }

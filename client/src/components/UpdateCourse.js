@@ -147,7 +147,8 @@ class UpdateCourse extends Component {
     }
 
     cancel = () => {
-        this.props.history.push('/');
+        const index = this.props.match.params.id;
+        this.props.history.push(`/courses/${index}`);
     }
 
     /** Render helper methods **/
