@@ -32,7 +32,7 @@ function asyncHandler(cb) {
 
 // GET /api/courses 200 - Returns a list of courses (including the user that owns each course)
 router.get('/', asyncHandler(async (req,res) => {
-    const courses = await ourse.findAll({
+    const courses = await Course.findAll({
         attributes: [
             "id",
             "title",
