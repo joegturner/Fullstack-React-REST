@@ -26,9 +26,9 @@ export default (props) => {
             <ErrorsDisplay errors={errors} />
             <form onSubmit={handleSubmit}>
                 {elements()}
-                <div className="grid=100 pad-bottom">
-                    <button className="button" type="submit">{submitButtonText}</button>
-                    <button className="button button-secondary" onClick={handleCancel}>Cancel</button>
+                <div className="grid-100 pad-bottom">
+                    <button className="button margin-bottom" type="submit">{submitButtonText}</button>
+                    <button className="button button-secondary margin-bottom" onClick={handleCancel}>Cancel</button>
                 </div>
             </form>
         </div>

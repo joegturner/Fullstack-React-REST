@@ -1,19 +1,18 @@
 :root {
-  --header_color: #1A3825;
+  --header_color: #1a3825;
   --button_course_color: #316845;
   --buttons: #316845;
-  --buttons_hover: #343E49;
-  --button_secondary: #1A3825;
+  --buttons_hover: #343e49;
+  --button_secondary: #1a3825;
   --button_secondary_hover: #316845;
-  --body: #ADD8BE;
-  --action_bar_bk: #5F9172;
+  --body: #add8be;
+  --action_bar_bk: #5f9172;
   --action_bar_bottom: rgb(0, 0, 0);
 
   --text_title: rgb(240, 238, 238);
 
-  --text_course_header: #3B0F82;
-  --text_course_stats: #3B0F82;
-
+  --text_course_header: #3b0f82;
+  --text_course_stats: #3b0f82;
 }
 
 @import url(https://fonts.googleapis.com/css2?family=Cinzel&family=Montserrat&display=swap);
@@ -221,7 +220,7 @@ svg {
 
 /* line 5, ../sass/global.sass */
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   background: var(--body);
 }
 
@@ -231,9 +230,12 @@ body {
   background: var(--header_color);
   padding: 20px 0;
   margin-bottom: 30px;
+  display: flex;
+  justify-content: space-evenly;
 }
 /* line 17, ../sass/global.sass */
 .header--logo {
+ 
   color: #fff;
   font-size: 24px;
   padding: 0 15px;
@@ -263,11 +265,15 @@ body {
 .header nav {
   float: right;
   margin-top: 3px;
+  width: 50%;
 }
+
 /* line 37, ../sass/global.sass */
 .header nav a {
   color: rgba(255, 255, 255, 0.5);
-  margin-left: 20px;
+  margin-left: 10%;
+  margin-right: 2%;
+  
 }
 /* line 40, ../sass/global.sass */
 .header nav a:hover {
@@ -282,7 +288,8 @@ body {
   margin-top: -30px;
 }
 /* line 2, ../sass/mixins.sass */
-.actions--bar:before, .actions--bar:after {
+.actions--bar:before,
+.actions--bar:after {
   content: " ";
   display: table;
 }
@@ -315,18 +322,23 @@ a {
 
 /* line 66, ../sass/global.sass */
 p {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin-bottom: 30px;
 }
 
 /* line 70, ../sass/global.sass */
 .bounds {
   max-width: 1250px;
+  width: 100%;
   margin: 0 auto;
 }
 
 /* line 74, ../sass/global.sass */
-.grid, .grid-25, .grid-33, .grid-66, .grid-100 {
+.grid,
+.grid-25,
+.grid-33,
+.grid-66,
+.grid-100 {
   float: left;
   padding: 0 15px;
   box-sizing: border-box;
@@ -370,7 +382,8 @@ p {
   box-sizing: border-box;
 }
 /* line 2, ../sass/mixins.sass */
-.course--module:before, .course--module:after {
+.course--module:before,
+.course--module:after {
   content: " ";
   display: table;
 }
@@ -386,7 +399,7 @@ p {
 }
 /* line 116, ../sass/global.sass */
 .course--label {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   font-weight: 100;
   color: var(--text_title);
@@ -397,7 +410,7 @@ p {
 .course--title {
   font-size: 18px;
   color: #fff;
-  font-family: 'Cinzel', serif;
+  font-family: "Cinzel", serif;
 }
 /* line 126, ../sass/global.sass */
 .course--link {
@@ -468,7 +481,7 @@ p {
 .course--title--input {
   font-size: 48px;
   font-weight: bold;
-  font-family: 'Cinzel', serif;
+  font-family: "Cinzel", serif;
 }
 /* line 186, ../sass/global.sass */
 .course--description {
@@ -497,10 +510,11 @@ p {
   border-top: 1px solid #ccc;
   font-size: 16px;
   line-height: 1.8;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 /* line 2, ../sass/mixins.sass */
-.course--description li:before, .course--description li:after {
+.course--description li:before,
+.course--description li:after {
   content: " ";
   display: table;
 }
@@ -536,7 +550,7 @@ p {
 .course--description h1,
 .course--description h2,
 .course--description h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #222;
   margin-bottom: 30px;
 }
@@ -562,7 +576,7 @@ p {
 }
 /* line 287, ../sass/global.sass */
 .course--stats--list h4 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 100;
   color: var(--text_course_stats);
   font-size: 14px;
@@ -577,7 +591,7 @@ p {
 }
 /* line 300, ../sass/global.sass */
 .course--stats--list h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 18px;
 }
 /* line 303, ../sass/global.sass */
@@ -595,7 +609,7 @@ p {
 }
 /* line 311, ../sass/global.sass */
 .course--time--input {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 18px;
   font-weight: bold;
   margin: 0;
@@ -620,7 +634,7 @@ textarea {
   color: #666;
   line-height: 1.8;
   outline: none;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
 }
 /* line 29, ../sass/mixins.sass */
@@ -703,7 +717,7 @@ input:focus {
   background: var(--buttons);
   color: #fff;
   cursor: pointer;
-  font-family: 'Cinzel', serif;
+  font-family: "Cinzel", serif;
   font-size: 18px;
   padding: 15px 30px;
   border: 0;

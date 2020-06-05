@@ -31,10 +31,18 @@ class CreateCourse extends Component {
                                     {this.renderFormTitle()}
                                     {this.renderFormDescription()}
                                 </div>
-                                <div className="grid-25 grid-right">
+                                <div className="grid-25">
                                     <div className="course--stats">
                                         <ul className="course--stats--list">
                                             {this.renderFormEstimatedTime()}
+                             
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div className="grid-25">
+                                    <div className="course--stats">
+                                        <ul className="course--stats--list">
+                                     
                                             {this.renderFormMaterialsNeeded()}
                                         </ul>
                                     </div>
@@ -100,7 +108,7 @@ class CreateCourse extends Component {
         const { title } = this.state;
         return (
             <div className="course--header">
-                <h4 className="course==label">Course</h4>
+                <h4 className="course--label">Course</h4>
                 <div>
                     <input 
                         className="input-title course--title--input" 

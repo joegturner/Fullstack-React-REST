@@ -38,10 +38,18 @@ class UpdateCourse extends Component {
                                     {this.renderFormTitle()}
                                     {this.renderFormDescription()}
                                 </div>
-                                <div className="grid-25 grid-right">
+                                <div className="grid-25">
                                     <div className="course--stats">
                                         <ul className="course--stats--list">
                                             {this.renderFormEstimatedTime()}
+                            
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div className="grid-25">
+                                    <div className="course--stats">
+                                        <ul className="course--stats--list">
+                              
                                             {this.renderFormMaterialsNeeded()}
                                         </ul>
                                     </div>
