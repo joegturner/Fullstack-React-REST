@@ -16,23 +16,23 @@
   overflow: hidden;
 }
 
-
 /* styles the validation errors */
 .validation--errors--label {
-  color: #7c689b;
+  color: #3d2b57;
   font-size: 28px;
 }
 .validation-errors ul {
-  color: #7c689b;
+  color: #3d2b57;
   padding: 15px 0 40px 10px;
+}
+.validation-errors li {
+  font-size: 18px;
 }
 
 /* Media Queries: Tablet Landscape */
 @media screen and (max-width: 1060px) {
-
   .course--title {
     font-size: 16px;
-   
   }
   .grid-33 {
     width: 33.3%;
@@ -47,30 +47,27 @@
 
 /* Media Queries: Tablet Portrait */
 @media screen and (max-width: 768px) {
-
   .grid-33.centered.signin {
     width: 60%;
   }
   .course--title--input {
     font-size: 1.5rem;
-}
+  }
 }
 
 /* Media Queries: Mobile Portrait */
 @media screen and (max-width: 425px) {
- 
   .header--logo {
     font-size: 20px;
   }
- div {
-   font-size: 90%;
- }
+  div {
+    font-size: 90%;
+  }
   .header nav {
     margin-top: 1.5%;
     width: 30%;
   }
   .header nav a {
-    
     margin-left: 3%;
     margin-right: 1%;
   }
@@ -85,21 +82,20 @@
   }
   .course--title--input {
     font-size: 1rem;
-}
+  }
   .grid-33.centered.signin {
     width: 90%;
   }
   .actions--bar .button {
     margin-bottom: 4px;
-}
-.button.margin-bottom {
-  margin: 5px;
-}
+  }
+  .button.margin-bottom {
+    margin: 5px;
+  }
 }
 
 /* Media Queries: Small Mobile Portrait */
 @media screen and (max-width: 320px) {
- 
   .header nav {
     margin-top: 1.5%;
     width: 40%;
@@ -109,7 +105,7 @@
   }
   .course--title--input {
     font-size: 1rem;
-}
+  }
 
   .grid-25 {
     width: 100%;

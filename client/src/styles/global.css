@@ -1,15 +1,24 @@
 :root {
-  --header_color: #1a3825;
+  /* --header_color: #1a3825;
   --button_course_color: #316845;
   --buttons: #316845;
   --buttons_hover: #343e49;
   --button_secondary: #1a3825;
   --button_secondary_hover: #316845;
   --body: #add8be;
-  --action_bar_bk: #5f9172;
+  --action_bar_bk: #5f9172; */
+  --header_color: #267fbf;
+  --button_course_color: #267fbf;
+  --buttons: #267fbf;
+  --buttons_hover: #343e49;
+  --button_secondary: #000;
+  --button_secondary_hover: #316845;
+  --body: #f7f7f7;
+  --action_bar_bk: #439ee0;
   --action_bar_bottom: rgb(0, 0, 0);
 
   --text_title: rgb(240, 238, 238);
+  /* --text_title: #000; */
 
   --text_course_header: #3b0f82;
   --text_course_stats: #3b0f82;
@@ -235,7 +244,6 @@ body {
 }
 /* line 17, ../sass/global.sass */
 .header--logo {
- 
   color: #fff;
   font-size: 24px;
   padding: 0 15px;
@@ -273,7 +281,6 @@ body {
   color: rgba(255, 255, 255, 0.5);
   margin-left: 10%;
   margin-right: 2%;
-  
 }
 /* line 40, ../sass/global.sass */
 .header nav a:hover {
