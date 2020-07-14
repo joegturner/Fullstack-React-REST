@@ -1,0 +1,36 @@
+/* Media Queries: Tablet Landscape */
+@media screen and (max-width: 1060px) {
+  .grid-33 {
+    width: 33.3%;
+  }
+}
+
+/* Media Queries: Tablet Portrait */
+@media screen and (max-width: 768px) {
+  * {
+    font-size: 40%;
+  }
+}
+
+/* Media Queries: Mobile Portrait */
+@media screen and (max-width: 425px) {
+  * {
+    font-size: 20%;
+  }
+  .grid-66 {
+    width: 100%;
+  }
+  .grid-33 {
+    width: 50%;
+  }
+  .grid-25 {
+    width: 100%;
+  }
+}
+
+/* Media Queries: Small Mobile Portrait */
+@media screen and (max-width: 320px) {
+  * {
+    font-size: 20%;
+  }
+}
