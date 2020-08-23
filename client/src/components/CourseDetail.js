@@ -11,7 +11,7 @@ class CourseDetail extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="actions-bar">{this.renderButtons()}</div>
+        {this.renderButtons()}
         {this.renderCourse()}
       </React.Fragment>
     );
@@ -63,49 +63,49 @@ class CourseDetail extends Component {
 
     if (course !== null) {
       jsx.push(
-        <div className="bounds">
-          <div key={1} className="grid-66">
-            <div className="course--header">
-              <h3 className="course--title">{course.title}</h3>
-              <p>{`By ${course.user.firstName} ${course.user.lastName}`}</p>
-            </div>
-            <div className="course--description">
-              <ReactMarkdown source={course.description} />
-            </div>
+        <div className="details">
+          <div className="details__header">
+            <h2 className="heading-2">{course.title}</h2>
+            <h3 className="heading-3">{`By ${course.user.firstName} ${course.user.lastName}`}</h3>
           </div>
-          <div className="grid-25">
-            {" "}
-            <div className="course--stats">
-              <ul className="course--stats--list">
-                <li className="course--stats--list--item">
-                  {course.estimatedTime ? (
-                    <React.Fragment>
-                      <h4>Estimated Time</h4>
-                      <h3>{course.estimatedTime}</h3>
-                    </React.Fragment>
-                  ) : null}
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="grid-25">
-            <div className="course--stats">
-              <ul className="course--stats--list">
-                <li className="course--stats--list--item">
-                  {course.materialsNeeded ? (
-                    <React.Fragment>
-                      <h4>Materials Needed</h4>
-                      <ReactMarkdown source={course.materialsNeeded} />
-                    </React.Fragment>
-                  ) : null}
-                </li>
-              </ul>
-            </div>
-          </div>
+          <div className="details__description">
+            <ReactMarkdown source={course.description} />
+          </div>{" "}
+          <ul className="details__list-1">
+            <li className="details__list-item">
+              {course.estimatedTime ? (
+                <React.Fragment>
+                  <h4 className="heading-4 details__list-title">
+                    Estimated Time
+                  </h4>
+                  <h5 className="details__time">{course.estimatedTime}</h5>
+                </React.Fragment>
+              ) : null}
+            </li>
+          </ul>
+          <ul className="details__list-2">
+            <li className="details__list-item">
+              {course.materialsNeeded ? (
+                <React.Fragment>
+                  <h4 className="heading-4 details__list-title">
+                    Materials Needed
+                  </h4>
+                  <ReactMarkdown
+                    className="details__materials"
+                    source={course.materialsNeeded}
+                  />
+                </React.Fragment>
+              ) : null}
+            </li>
+          </ul>
         </div>
       );
     } else {
-      jsx.push(<h1 key={1}>Loading...</h1>);
+      jsx.push(
+        <h1 key={1} className="loading-text">
+          Loading...
+        </h1>
+      );
     }
 
     return jsx;
@@ -126,43 +126,40 @@ class CourseDetail extends Component {
 
     if (course !== null) {
       return (
-        <span>
-          <div className="bounds">
-            <div className="grid-100">
-              {authenticated ? (
-                <span>
-                  <NavLink className="button" to={`${course.id}/update`}>
-                    Update Course
-                  </NavLink>
-                  <button
-                    className="button"
-                    onClick={() => this.showDeleteConfirm()}
-                  >
-                    Delete Course
-                  </button>
-                </span>
-              ) : null}
-              <NavLink className="button button-secondary" to="/">
-                Return to List
-              </NavLink>
-            </div>
-          </div>
-          {showDeleteConfirmation ? (
-            <div className="bounds">
-              <div className="grid-100" style={{ margin: "10px" }}>
-                <button className="button" onClick={() => this.handleDelete()}>
-                  Confirm delete
-                </button>
+        <React.Fragment>
+          <div className="details__menu">
+            {authenticated ? (
+              <React.Fragment>
+                <NavLink className="btn" to={`${course.id}/update`}>
+                  Update Course
+                </NavLink>
                 <button
-                  className="button button-secondary"
-                  onClick={() => this.hideDeleteConfirm()}
+                  className="btn"
+                  onClick={() => this.showDeleteConfirm()}
                 >
-                  No, cancel
+                  Delete Course
                 </button>
-              </div>
+              </React.Fragment>
+            ) : null}
+            <NavLink className="btn btn--secondary" to="/">
+              Return to List
+            </NavLink>
+          </div>
+
+          {showDeleteConfirmation ? (
+            <div className="details__sub-menu">
+              <button className="btn" onClick={() => this.handleDelete()}>
+                Confirm delete
+              </button>
+              <button
+                className="btn btn--secondary"
+                onClick={() => this.hideDeleteConfirm()}
+              >
+                No, cancel
+              </button>
             </div>
           ) : null}
-        </span>
+        </React.Fragment>
       );
     } else {
       return null;

@@ -1,0 +1,75 @@
+// COLOR VARIABLES
+$color-primary: #267fbf;
+$color-primary-dark: #206ba0;
+
+$color-secondary: #101d2c;
+
+$color-black: rgb(24, 24, 24);
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: rgb(120, 132, 136);
+
+$color-grey-dark-1: #3a4a54;
+$color-grey-dark-2: #4b606d;
+
+$color-red: #c7200a;
+
+// FONT VARIABLES
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i|Nunito:300,300i");
+
+$font-primary: "Nunito", sans-serif;
+$font-display: "Josefin Sans", sans-serif;
+
+// RESPONSIVE BREAKPOINTS
+$bp-small: 37.5em; // 600px / 16px = 37.5em
+$bp-medium: 50em; // 800px / 16px = 50em
+$bp-large: 62.5em; // 1000px / 16px = 62.5em
+$bp-largest: 75em; // 1200px / 16px = 75em
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $font-primary;
+  color: $color-grey-dark-1;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1250px;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.loading-text {
+  margin: 10rem;
+  color: $color-grey-dark-1;
+
+  animation: loading 2s infinite;
+}
+
+@keyframes loading {
+  0% {
+    color: $color-grey-dark-1;
+  }
+
+  50% {
+    color: $color-grey-light-1;
+  }
+
+  100% {
+    color: $color-grey-dark-1;
+  }
+}

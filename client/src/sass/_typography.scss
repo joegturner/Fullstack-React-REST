@@ -1,0 +1,112 @@
+%heading {
+  font-family: $font-display;
+  font-weight: 400;
+}
+
+.heading-1 {
+  @extend %heading;
+  font-size: 6rem;
+  color: $color-grey-light-1;
+  line-height: 1;
+}
+
+.heading-2 {
+  @extend %heading;
+  font-size: 3rem;
+  font-style: italic;
+  line-height: 1;
+}
+
+.heading-3 {
+  @extend %heading;
+  font-size: 2rem;
+}
+
+.heading-4 {
+  @extend %heading;
+  font-size: 1.6rem;
+}
+
+.heading-5 {
+  @extend %heading;
+  font-size: 1.4rem;
+}
+
+.sign-text {
+  font-size: 1.6rem;
+}
+
+.text-light {
+  color: $color-grey-light-1;
+}
+
+.text-dark {
+  color: $color-grey-dark-1;
+}
+
+.text-shadow {
+  text-shadow: 0.1rem 0.1rem 1rem rgba($color-black, 1);
+}
+
+.btn {
+  width: 16rem;
+  height: 5rem;
+  background-color: $color-primary;
+  color: #fff;
+  border-radius: 10px;
+  font-family: $font-display;
+  font-size: 1.7rem;
+  padding: 1.3rem 2rem;
+  margin: 1rem 2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 300;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  }
+
+  &--secondary {
+    color: $color-grey-dark-1;
+    background-color: $color-grey-light-1;
+    border: 1px solid $color-black;
+  }
+}
+
+a.btn,
+a.btn-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.mb-sm {
+  margin-bottom: 2rem;
+}
+.mb-md {
+  margin-bottom: 3rem;
+}
+.mb-lg {
+  margin-bottom: 4rem;
+}
+.mb-hg {
+  margin-bottom: 8rem;
+}
+.validation-errors-label {
+  color: #c7200a;
+  font-size: 2.8rem;
+}
+.validation-errors ul {
+  color: #c7200a;
+  padding: 1.5rem 0 4rem 1rem;
+}
+.validation-errors li {
+  font-size: 1.8rem;
+}

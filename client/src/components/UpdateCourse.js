@@ -22,7 +22,7 @@ class UpdateCourse extends Component {
     this.checkUser();
 
     return (
-      <div className="bounds course--detail">
+      <div className="course-data">
         <h1>Update Course</h1>
         {status ? (
           <Form
@@ -32,18 +32,18 @@ class UpdateCourse extends Component {
             submitButtonText="Update Course"
             elements={() => (
               <React.Fragment>
-                <div className="grid-66">
+                <div className="course-data__box-1">
                   {this.renderFormTitle()}
                   {this.renderFormDescription()}
                 </div>
-                <div className="grid-25">
+                <div className="course-data__box-2">
                   <div className="course--stats">
                     <ul className="course--stats--list">
                       {this.renderFormEstimatedTime()}
                     </ul>
                   </div>
                 </div>
-                <div className="grid-25">
+                <div className="course-data__box-3">
                   <div className="course--stats">
                     <ul className="course--stats--list">
                       {this.renderFormMaterialsNeeded()}
@@ -54,7 +54,7 @@ class UpdateCourse extends Component {
             )}
           />
         ) : (
-          <div className="bounds">
+          <div className="container">
             <h1>Loading...</h1>
           </div>
         )}

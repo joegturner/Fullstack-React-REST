@@ -12,44 +12,42 @@ class UserSignIn extends Component {
     const { emailAddress, password, errors } = this.state;
 
     return (
-      <div className="bounds">
-        <div className="grid-33 centered signin">
-          <h1>Sign In</h1>
-          <Form
-            cancel={this.cancel}
-            submit={this.submit}
-            errors={errors}
-            submitButtonText="Sign in"
-            elements={() => (
-              <React.Fragment>
-                <input
-                  id="emailAddress"
-                  name="emailAddress"
-                  type="text"
-                  value={emailAddress}
-                  onChange={this.change}
-                  placeholder="Email Address"
-                />
-                <input
-                  id="password"
-                  name="password"
-                  type="password"
-                  value={password}
-                  onChange={this.change}
-                  placeholder="password"
-                />
-              </React.Fragment>
-            )}
-          />
-          <p className="sign-message">
-            Don't have a user account?
-            <a className="sign-message" href="/signup">
-              {" "}
-              Click here{" "}
-            </a>
-            to sign up!
-          </p>
-        </div>
+      <div className="sign-form">
+        <h1>Sign In</h1>
+        <Form
+          cancel={this.cancel}
+          submit={this.submit}
+          errors={errors}
+          submitButtonText="Sign in"
+          elements={() => (
+            <React.Fragment>
+              <input
+                id="emailAddress"
+                name="emailAddress"
+                type="text"
+                value={emailAddress}
+                onChange={this.change}
+                placeholder="Email Address"
+              />
+              <input
+                id="password"
+                name="password"
+                type="password"
+                value={password}
+                onChange={this.change}
+                placeholder="password"
+              />
+            </React.Fragment>
+          )}
+        />
+        <p className="sign-message">
+          Don't have a user account?
+          <a className="sign-message" href="/signup">
+            {" "}
+            Click here{" "}
+          </a>
+          to sign up!
+        </p>
       </div>
     );
   }

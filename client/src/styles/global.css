@@ -1,19 +1,17 @@
-@import url(https://fonts.googleapis.com/css2?family=Cinzel&family=Montserrat&display=swap);
-
 /* line 7, ../sass/reset.sass */
 *,
 *::after,
 *::before {
-  border: 0;
+  /* border: 0;
   margin: 0;
   padding: 0;
-  font-size: 62.5%;
+  font-size: 62.5%; */
 }
 
 /* line 102, ../sass/reset.sass */
 html,
 body {
-  height: 100%;
+  /* height: 100%; */
 }
 
 /* line 106, ../sass/reset.sass */
@@ -112,11 +110,11 @@ svg {
 
 /* line 5, ../sass/global.sass */
 body {
-  font-family: "Montserrat", sans-serif;
-  background: #e0e0e0;
+  /* font-family: "Montserrat", sans-serif; */
+  /* background: #e0e0e0; */
 }
 
-.header {
+/* .header {
   height: 20rem;
   background-image: linear-gradient(
       to right,
@@ -131,7 +129,7 @@ body {
 
   margin-bottom: 3rem;
   position: relative;
-}
+} */
 
 .header-logo-box {
   position: absolute;
@@ -219,25 +217,25 @@ body {
 
 /* line 57, ../sass/global.sass */
 h1 {
-  font-size: 3.6rem;
-  margin-bottom: 2rem;
+  /* font-size: 3.6rem;
+  margin-bottom: 2rem; */
 }
 
 /* line 61, ../sass/global.sass */
 a {
-  cursor: pointer;
+  /* cursor: pointer;
   text-decoration: none;
   -webkit-transition: color 0.2s;
   -moz-transition: color 0.2s;
   -ms-transition: color 0.2s;
   -o-transition: color 0.2s;
-  transition: color 0.2s;
+  transition: color 0.2s; */
 }
 
 /* line 66, ../sass/global.sass */
 p {
-  font-family: "Montserrat", sans-serif;
-  margin-bottom: 3rem;
+  /* font-family: "Montserrat", sans-serif; */
+  /* margin-bottom: 3rem; */
 }
 
 /* line 70, ../sass/global.sass */
@@ -633,7 +631,7 @@ input:focus {
 
 /* line 507, ../sass/global.sass */
 .button {
-  background: #267fbf;
+  /* background: #267fbf;
   color: #fff;
   cursor: pointer;
   font-family: "Cinzel", serif;
@@ -649,7 +647,7 @@ input:focus {
   -moz-transition: background 0.2s;
   -ms-transition: background 0.2s;
   -o-transition: background 0.2s;
-  transition: background 0.2s;
+  transition: background 0.2s; */
 }
 /* line 520, ../sass/global.sass */
 .button:focus {

@@ -14,9 +14,10 @@ class CreateCourse extends Component {
     const { errors } = this.state;
 
     return (
-      <div className="bounds course--detail">
-        <h1>Create Course</h1>
-        <div>
+      <React.Fragment>
+        <div className="course-data">
+          <h1>Create Course</h1>
+
           <Form
             cancel={this.cancel}
             errors={errors}
@@ -24,18 +25,18 @@ class CreateCourse extends Component {
             submitButtonText="Create Course"
             elements={() => (
               <React.Fragment>
-                <div className="grid-66">
+                <div className="course-data__box-1">
                   {this.renderFormTitle()}
                   {this.renderFormDescription()}
                 </div>
-                <div className="grid-25">
+                <div className="course-data__box-2">
                   <div className="course--stats">
                     <ul className="course--stats--list">
                       {this.renderFormEstimatedTime()}
                     </ul>
                   </div>
                 </div>
-                <div className="grid-25">
+                <div className="course-data__box-3">
                   <div className="course--stats">
                     <ul className="course--stats--list">
                       {this.renderFormMaterialsNeeded()}
@@ -46,7 +47,7 @@ class CreateCourse extends Component {
             )}
           />
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 

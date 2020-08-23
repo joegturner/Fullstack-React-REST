@@ -1,0 +1,269 @@
+.sign-form {
+  width: 33%;
+  margin: 5rem auto;
+}
+
+.form {
+  &__buttons {
+    display: flex;
+  }
+}
+
+.course-data {
+  margin: 5rem auto;
+  padding: 2rem;
+
+  &__box-1 {
+    grid-row: 1 / -1;
+    grid-column: 1 / 2;
+  }
+  &__box-2 {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+  }
+  &__box-3 {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+  }
+}
+
+.error {
+  width: 60%;
+  margin: 10rem auto;
+  text-align: center;
+  & > h1 {
+    font-size: 3rem;
+  }
+
+  & > p {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  & > a {
+    text-decoration: none;
+  }
+}
+
+/////////////////////////
+//// OLD BELOW
+.bounds {
+  max-width: 1250px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.grid,
+.grid-25,
+.grid-33,
+.grid-66,
+.grid-100 {
+  float: left;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.grid-25 {
+  width: 25%;
+}
+
+.grid-33 {
+  width: 33.3%;
+}
+
+.grid-66 {
+  width: 66.6%;
+}
+
+.grid-100 {
+  width: 100%;
+}
+
+.grid-right {
+  float: right;
+}
+
+.course--stats--list {
+  & h4 {
+    font-weight: 100;
+    color: #267fbf;
+    font-size: 1.4rem;
+    padding: 0 0 1rem;
+
+    border-bottom: 1px solid #ddd;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  & h3 {
+    font-size: 1.8rem;
+  }
+
+  & > li {
+    margin-bottom: 5rem;
+  }
+
+  & > li ul {
+    padding-left: 2rem;
+  }
+
+  & > li li {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    list-style-type: circle;
+  }
+}
+
+.course--header {
+  margin-bottom: 3rem;
+
+  & .course--label {
+    font-size: 4rem;
+    color: #267fbf;
+  }
+
+  & .course--title {
+    font-size: 4.8rem;
+    margin-bottom: 1.5rem;
+    color: #332a40;
+  }
+
+  & p {
+    font-size: 1.8rem;
+    color: #332a40;
+    font-weight: 100;
+  }
+}
+
+.course--title--input {
+  font-size: 4.8rem;
+  font-weight: bold;
+  font-family: "Cinzel", serif;
+}
+
+.course--description {
+  margin-bottom: 3rem;
+
+  & p {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    color: #444;
+  }
+
+  & ol,
+  & ul {
+    list-style-type: none;
+  }
+
+  & li {
+    position: relative;
+    padding-left: 3rem;
+    padding: 3rem 0 3rem 5%;
+    border-top: 1px solid #ccc;
+    font-size: 1.6rem;
+    line-height: 1.8;
+  }
+
+  & li:before,
+  & li:after {
+    content: " ";
+    display: table;
+  }
+
+  & li:after {
+    clear: both;
+  }
+
+  & ol li {
+    counter-increment: step-counter;
+  }
+
+  & ol li:before {
+    content: counter(step-counter);
+    color: #999;
+    font-size: 1.8rem;
+    position: absolute;
+    left: 0;
+    top: 34px;
+  }
+
+  & ul li:before {
+    content: "";
+    float: left;
+    margin: 0.9rem 0 0 -3rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    border: 1px solid #999;
+    border-radius: 10px;
+    display: block;
+  }
+
+  & h1,
+  & h2,
+  & h3 {
+    color: #222;
+    margin-bottom: 3rem;
+  }
+
+  & h1 {
+    font-size: 3.6rem;
+  }
+
+  & h2 {
+    font-size: 3rem;
+  }
+
+  & h3 {
+    font-size: 2.4rem;
+  }
+
+  & h4 {
+    font-size: 1.8rem;
+    font-weight: 100;
+    margin: 0 0 1rem;
+    color: #999;
+    display: block;
+  }
+}
+
+.course--stats--list {
+  & h4 {
+    font-weight: 100;
+    color: #267fbf;
+    font-size: 1.4rem;
+    padding: 0 0 1rem;
+
+    border-bottom: 1px solid #ddd;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  & h3 {
+    font-size: 1.8rem;
+  }
+
+  & > li {
+    margin-bottom: 5rem;
+  }
+
+  & > li ul {
+    padding-left: 2rem;
+  }
+
+  & > li li {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    list-style-type: circle;
+  }
+}
+.course--time--input {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+}

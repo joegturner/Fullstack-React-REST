@@ -22,68 +22,66 @@ class UserSignIn extends Component {
     } = this.state;
 
     return (
-      <div className="bounds">
-        <div className="grid-33 centered signin">
-          <h1>Sign Up</h1>
-          <Form
-            cancel={this.cancel}
-            submit={this.submit}
-            errors={errors}
-            submitButtonText="Sign Up"
-            elements={() => (
-              <React.Fragment>
-                <input
-                  id="firstName"
-                  name="firstName"
-                  type="text"
-                  value={firstName}
-                  onChange={this.change}
-                  placeholder="First Name"
-                />
-                <input
-                  id="lastName"
-                  name="lastName"
-                  type="text"
-                  value={lastName}
-                  onChange={this.change}
-                  placeholder="Last Name"
-                />
-                <input
-                  id="emailAddress"
-                  name="emailAddress"
-                  type="text"
-                  value={emailAddress}
-                  onChange={this.change}
-                  placeholder="Email Address"
-                />
-                <input
-                  id="password"
-                  name="password"
-                  type="password"
-                  value={password}
-                  onChange={this.change}
-                  placeholder="Password"
-                />
-                <input
-                  id="confirmPassword"
-                  name="confirmPassword"
-                  type="password"
-                  value={confirmPassword}
-                  onChange={this.change}
-                  placeholder="Confirm Password"
-                />
-              </React.Fragment>
-            )}
-          />
-          <p className="sign-message">
-            Already have a user account?
-            <a className="sign-message" href="/signin">
-              {" "}
-              Click here{" "}
-            </a>
-            to sign in!
-          </p>
-        </div>
+      <div className="sign-form">
+        <h1>Sign Up</h1>
+        <Form
+          cancel={this.cancel}
+          submit={this.submit}
+          errors={errors}
+          submitButtonText="Sign Up"
+          elements={() => (
+            <React.Fragment>
+              <input
+                id="firstName"
+                name="firstName"
+                type="text"
+                value={firstName}
+                onChange={this.change}
+                placeholder="First Name"
+              />
+              <input
+                id="lastName"
+                name="lastName"
+                type="text"
+                value={lastName}
+                onChange={this.change}
+                placeholder="Last Name"
+              />
+              <input
+                id="emailAddress"
+                name="emailAddress"
+                type="text"
+                value={emailAddress}
+                onChange={this.change}
+                placeholder="Email Address"
+              />
+              <input
+                id="password"
+                name="password"
+                type="password"
+                value={password}
+                onChange={this.change}
+                placeholder="Password"
+              />
+              <input
+                id="confirmPassword"
+                name="confirmPassword"
+                type="password"
+                value={confirmPassword}
+                onChange={this.change}
+                placeholder="Confirm Password"
+              />
+            </React.Fragment>
+          )}
+        />
+        <p className="sign-text">
+          Already have a user account?
+          <a className="sign-text" href="/signin">
+            {" "}
+            Click here{" "}
+          </a>
+          to sign in!
+        </p>
       </div>
     );
   }
